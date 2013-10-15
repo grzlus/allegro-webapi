@@ -12,7 +12,7 @@ module Allegro
 
 
       def password=(password)
-        hash = Digest::SHA256.new.digest(password)
+        hash = Digest::SHA256.new.digest(password || "")
         @password = Base64.encode64(hash)
       end
 
